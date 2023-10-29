@@ -12,7 +12,7 @@ const router = Router()
 
 router.get('/', (req, res) => {
   const persons = getPersons()
-  res.send({ msg: `getting person ${req.params.id}`})
+  res.send({ msg: 'Get all Persons'})
 })
 
 router.get('/:id', (req, res) => {
