@@ -12,13 +12,13 @@ const router = Router()
 
 router.get('/', (req, res) => {
   const persons = getPersons()
-  res.send(persons)
+  res.send({ msg: `getting person ${req.params.id}`})
 })
 
 router.get('/:id', (req, res) => {
   const person = getPerson(req.params.id)
   if (person) {
-    res.send(person)
+    res.send({ msg: `Getting Person ${req.params.id}` })
   }
   res.status(404).send({ msg: 'Person not found' })
 })
